@@ -696,7 +696,7 @@
         });
 
         allServices.forEach((service, index) => {
-          const listItem = `<li><a href="safety-nets.html" class="hover:text-white transition duration-300">${service.title}</a></li>`;
+          const listItem = `<li><a href="${service.link}" class="hover:text-white transition duration-300">${service.title}</a></li>`;
           if (index < 6) {
             footerServicesList1.innerHTML += listItem;
           } else {
