@@ -107,8 +107,8 @@
       .fab-icon {
         color: white;
         border-radius: 50%;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -166,7 +166,7 @@
         <a href="index.html">
           <!-- Logo Image -->
           <img
-            src="images/logo.jpeg"
+            src="images/logo.png"
             alt="LoveSafetyNets Logo"
             class="h-16"
             onerror="this.onerror=null;this.src='https://placehold.co/200x64?text=Logo';"
@@ -294,45 +294,51 @@
         <div id="slider-container" class="w-full h-full">
           <div class="slider-item active">
             <img
-              src="https://placehold.co/1920x1080/044343/FFFFFF?text=Balcony+Safety+Net"
+              src="images/sliders/slider1-safetynet.jpeg"
               alt="Balcony Safety Net"
             />
           </div>
           <div class="slider-item">
             <img
-              src="https://placehold.co/1920x1080/1E293B/FFFFFF?text=Children+Safety"
+              src="images/sliders/invisible-grills-slider.png"
               alt="Child Safety Net"
             />
           </div>
           <div class="slider-item">
             <img
-              src="https://placehold.co/1920x1080/475569/FFFFFF?text=Industrial+Site+Safety"
-              alt="Industrial Safety Net"
+              src="images/sliders/slider1-safetynet.jpeg"
+              alt="Child Safety Net"
             />
           </div>
           <div class="slider-item">
             <img
-              src="https://placehold.co/1920x1080/334155/FFFFFF?text=Pigeon+Protection+Net"
-              alt="Pigeon Net"
+              src="images/sliders/balcony-slider1.jpg"
+              alt="Industrial Safety Net"
             />
+          </div>
+          <div class="slider-item">
+            <img src="images/sliders/pigeonnet-slider3.jpg" alt="Pigeon Net" />
           </div>
         </div>
         <div
-          class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center z-10"
+          class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center z-10"
         >
           <div class="text-center text-white p-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-              Your Safety, Our Priority
+            <h1 class="text-2xl md:text-2xl font-extrabold mb-4 drop-shadow-lg">
+              Welcome To<br />
+              Lohit Safety Nets
             </h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
+            <!-- <p class="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
               Providing high-quality, durable, and reliable safety nets for
               every need across Visakhapatnam.
-            </p>
+            </p> -->
             <a
               href="contact.html"
-              class="mt-8 inline-block bg-theme-accent text-theme-primary px-8 py-3 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition duration-300"
-              >Get a Free Quote</a
+              class="mt-8 inline-block bg-theme-accent text-theme-primary px-4 py-1 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition duration-300"
             >
+              <i class="fas fa-phone"></i>
+              <span>7794945385</span>
+            </a>
           </div>
         </div>
       </section>
@@ -578,7 +584,7 @@
           {
             title: "Balcony Safety Nets",
             desc: "Secure your balconies for children and pets with our durable nets.",
-            img: "https://placehold.co/400x300/1E293B/FFFFFF?text=Balcony+Nets",
+            img: "images/services/balcony-safety-nets-bangalore.jpg",
           },
           {
             title: "Pets Safety Nets",
@@ -669,9 +675,10 @@
                     <div class="service-card bg-white/90 rounded-lg shadow-lg border border-gray-200 transition-all duration-300 overflow-hidden flex flex-col text-slate-dark-gray">
                         <img src="${service.img}" alt="${service.title}" class="w-full h-48 object-cover">
                         <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-bold text-xl mb-2">${service.title}</h3>
+                            <h3 class="font-bold text-xl mb-2 text-gray-600">${service.title}</h3>
                             <p class="text-gray-600 mb-4 flex-grow">${service.desc}</p>
-                            <a href="safety-nets.html" class="mt-auto inline-block bg-theme-primary text-white text-center px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">Learn More</a>
+                            <a href="safety-nets.html" class="mt-auto inline-block bg-theme-primary text-white text-center px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300">          <i class="fas fa-phone"></i>
+Call for enquiry</a>
                         </div>
                     </div>`;
         });
