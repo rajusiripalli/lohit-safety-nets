@@ -73,11 +73,11 @@
       }
 
       /* Shared style for floating buttons */
-      .fab-icon {
+     .fab-icon {
         color: white;
         border-radius: 50%;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -292,8 +292,8 @@
           <!-- Column 1: Logo & Info -->
           <div>
             <a href="index.html">
-              <img
-                src="https://placehold.co/200x64/E0F2F1/044343?text=Lohit Safety Nets"
+    <img
+                src="images/logo2.png"
                 alt="Lohit Safety Nets Logo"
                 class="h-16 mb-4"
                 onerror="this.onerror=null;this.src='https://placehold.co/200x64?text=Logo';"
@@ -347,14 +347,14 @@
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-start">
                 <span class="mr-2 mt-1">📍</span
-                ><span>Dwaraka nagar, Visakhapatnam</span>
+                ><span>Muthayala nagar, Bangalore</span>
               </li>
               <li class="flex items-center">
                 <span class="mr-2">✉️</span
                 ><a
-                  href="mailto:rajusiripalli7@gmail.com"
+                  href="mailto:lohitsafetynets@gmail.com"
                   class="hover:text-white"
-                  >rajusiripalli7@gmail.com</a
+                  >lohitsafetynets@gmail.com</a
                 >
               </li>
               <li class="flex items-center">
@@ -379,13 +379,13 @@
 
     <!-- Floating Action Buttons Container -->
     <div class="floating-action-buttons">
-      <a
-        href="mailto:rajusiripalli7@gmail.com"
+       <!-- <a
+        href="mailto:lohitsafetynets@gmail.com"
         class="fab-icon fab-email"
         aria-label="Email Us"
       >
         <i class="fas fa-envelope"></i>
-      </a>
+      </a> -->
       <a href="tel:9900497975" class="fab-icon fab-phone" aria-label="Call Us">
         <i class="fas fa-phone"></i>
       </a>
@@ -510,15 +510,15 @@
         });
 
         allServices.forEach((service, index) => {
-          const listItem = `<li><a href="safety-nets.html" class="hover:text-white transition duration-300">${service.title}</a></li>`;
+          const listItem = `<li><a href="${service.link}" class="hover:text-white transition duration-300">${service.title}</a></li>`;
           if (index < 6) {
             footerServicesList1.innerHTML += listItem;
           } else {
             footerServicesList2.innerHTML += listItem;
           }
 
-          servicesSubmenu.innerHTML += `<a href="safety-nets.html" class="block px-4 py-2 text-sm hover:bg-gray-100">${service.title}</a>`;
-          mobileSubmenuContainer.innerHTML += `<a href="safety-nets.html" class="block py-2 text-sm text-theme-accent hover:text-white">${service.title}</a>`;
+          servicesSubmenu.innerHTML += `<a href="${service.link}" class="block px-4 py-2 text-sm hover:bg-gray-100">${service.title}</a>`;
+          mobileSubmenuContainer.innerHTML += `<a href="${service.link}" class="block py-2 text-sm text-theme-accent hover:text-white">${service.title}</a>`;
         });
 
         // Mobile submenu accordion logic
