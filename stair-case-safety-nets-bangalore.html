@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safety Nets - Lohit Safety Nets</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for star icons and WhatsApp -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Custom CSS for theme colors and animations -->
+    <style>
+      :root {
+        /* New Color Palette: Light Aqua and Deep Tea */
+        --light-aqua: #e0f2f1;
+        --deep-tea: #044343;
+        --slate-dark-gray: #1e293b;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        /* New attractive gradient background */
+        background: linear-gradient(135deg, #0d5c63, #044343);
+        color: var(--light-aqua);
+      }
+
+      /* Updated Theme Colors */
+      .bg-theme-primary {
+        background-color: var(--deep-tea);
+      }
+      .text-theme-primary {
+        color: var(--deep-tea);
+      }
+      .border-theme-primary {
+        border-color: var(--deep-tea);
+      }
+      .text-theme-accent {
+        color: var(--light-aqua);
+      }
+      .bg-theme-accent {
+        background-color: var(--light-aqua);
+      }
+
+      /* Glassmorphism effect for sections */
+      .glass-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Floating Icons Container */
+      .floating-action-buttons {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* space between icons */
+        z-index: 1000;
+      }
+
+      /* Shared style for floating buttons */
+     .fab-icon {
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem; /* Adjusted size for consistency */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .fab-icon:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      }
+      .fab-whatsapp {
+        background-color: #25d366;
+      }
+      .fab-phone {
+        background-color: #34b7f1;
+      } /* Example color for phone */
+      .fab-email {
+        background-color: #ea4335;
+      } /* Example color for email */
+
+      /* FIX: Submenu text color */
+      #services-submenu a {
+        color: var(--slate-dark-gray);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NEW: Top Header Bar -->
+    <div class="bg-slate-dark-gray text-sm text-gray-300 py-2">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a
+          href="tel:9900497975"
+          class="flex items-center gap-2 hover:text-white transition-colors"
+        >
+          <i class="fas fa-phone"></i>
+          <span>9900497975</span>
+        </a>
+        <a
+          href="tel:9900497975"
+          class="font-semibold hover:text-white transition-colors"
+        >
+          Free Installation
+        </a>
+      </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header
+      class="bg-white/10 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-white/20"
+    >
+      <nav
+        class="container mx-auto px-6 py-2 flex justify-between items-center"
+      >
+        <a href="index.html">
+          <!-- Logo Image -->
+          <img
+            src="images/logo.png"
+            alt="Lohit Safety Nets Logo"
+            class="h-16"
+            onerror="this.onerror=null;this.src='https://placehold.co/200x64?text=Logo';"
+          />
+        </a>
+        <div class="hidden lg:flex items-center space-x-8">
+          <a
+            href="index.html"
+            class="text-theme-accent hover:text-white transition duration-300"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-theme-accent hover:text-white transition duration-300"
+            >About Us</a
+          >
+          <!-- Safety Nets Dropdown -->
+          <div class="relative group">
+            <a
+              href="#"
+              class="text-white font-semibold transition duration-300 flex items-center py-4"
+            >
+              Safety Nets
+              <svg
+                class="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </a>
+            <div
+              id="services-submenu"
+              class="absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-64 z-50 top-full -mt-2"
+            >
+              <!-- Submenu items will be populated by JS -->
+            </div>
+          </div>
+          <a
+            href="invisible-grills.html"
+            class="text-theme-accent hover:text-white transition duration-300"
+            >Invisible Grills</a
+          >
+          <a
+            href="contact.html"
+            class="bg-theme-accent text-theme-primary px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 font-semibold"
+            >Contact Us</a
+          >
+        </div>
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden text-theme-accent focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden px-6 pb-4 bg-white/10 backdrop-blur-sm"
+      >
+        <a
+          href="index.html"
+          class="block py-2 text-theme-accent hover:text-white"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="block py-2 text-theme-accent hover:text-white"
+          >About Us</a
+        >
+        <!-- UPDATE: Mobile Submenu Accordion -->
+        <div
+          id="mobile-submenu-toggle"
+          class="flex justify-between items-center py-2 text-white font-semibold cursor-pointer"
+        >
+          <a href="#" class="flex-grow">Safety Nets</a>
+          <i
+            id="mobile-submenu-icon"
+            class="fas fa-plus transition-transform duration-300"
+          ></i>
+        </div>
+        <div id="mobile-submenu-container" class="pl-4 hidden">
+          <!-- Mobile submenu items will be populated by JS -->
+        </div>
+        <a
+          href="invisible-grills.html"
+          class="block py-2 text-theme-accent hover:text-white"
+          >Invisible Grills</a
+        >
+        <a
+          href="contact.html"
+          class="block mt-2 bg-theme-accent text-theme-primary px-4 py-2 rounded-md text-center font-semibold"
+          >Contact Us</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section for Safety Nets Page -->
+      <section
+        class="relative h-64 md:h-80 w-full flex items-center justify-center text-center"
+      >
+        <div class="absolute inset-0 bg-black bg-opacity-50">
+          <img
+            src="images/about-us-bg.jpg"
+            class="w-full h-full object-cover opacity-30"
+            alt="Lohit Safety Nets"
+          />
+        </div>
+        <div class="relative z-10 text-white p-4">
+          <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+            Lohit Safety Net Solutions
+          </h1>
+          <p class="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
+            Comprehensive Protection for Every Need
+          </p>
+        </div>
+      </section>
+
+      <!-- Services Details Section -->
+      <!-- UPDATE: Improved padding and layout -->
+      <section id="services-details" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 space-y-12">
+          <!-- Service items will be dynamically inserted here by JavaScript -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-dark-gray text-white pt-12 pb-8">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Column 1: Logo & Info -->
+          <div>
+            <a href="index.html">
+    <img
+                src="images/logo2.png"
+                alt="Lohit Safety Nets Logo"
+                class="h-16 mb-4"
+                onerror="this.onerror=null;this.src='https://placehold.co/200x64?text=Logo';"
+              />
+            </a>
+            <p class="text-gray-400 mb-4">
+              Your trusted partner for comprehensive safety net solutions. We
+              ensure quality, durability, and professional installation.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  /></svg
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  /></svg
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+                ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 4.22c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14a2 2 0 110-4 2 2 0 010 4zm6.406-7.18a.938.938 0 100-1.875.938.938 0 000 1.875z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <!-- Column 2: Services Pt. 1 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Our Services</h3>
+            <ul id="footer-services-1" class="space-y-2 text-gray-400"></ul>
+          </div>
+          <!-- Column 3: Services Pt. 2 -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">&nbsp;</h3>
+            <!-- Empty header for alignment -->
+            <ul id="footer-services-2" class="space-y-2 text-gray-400"></ul>
+          </div>
+          <!-- Column 4: Contact -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-white">Contact</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-start">
+                <span class="mr-2 mt-1">📍</span
+                ><span>Muthayala nagar, Bangalore</span>
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2">✉️</span
+                ><a
+                  href="mailto:lohitsafetynets@gmail.com"
+                  class="hover:text-white"
+                  >lohitsafetynets@gmail.com</a
+                >
+              </li>
+              <li class="flex items-center">
+                <span class="mr-2">📞</span
+                ><a href="tel:9900497975" class="hover:text-white"
+                  >9900497975</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500"
+        >
+          <p>
+            &copy; <span id="current-year"></span> Lohit Safety Nets. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Action Buttons Container -->
+    <div class="floating-action-buttons">
+       <!-- <a
+        href="mailto:lohitsafetynets@gmail.com"
+        class="fab-icon fab-email"
+        aria-label="Email Us"
+      >
+        <i class="fas fa-envelope"></i>
+      </a> -->
+      <a href="tel:9900497975" class="fab-icon fab-phone" aria-label="Call Us">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a
+        href="https://wa.me/919742786997?text=Hello%20Lohit%20Safety%20Nets%2C%20I'm%20interested%20in%20balcony%20safety%20nets%20and%20invisible%20grills."
+        target="_blank"
+        class="fab-icon fab-whatsapp"
+        aria-label="Chat on WhatsApp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- DATA ---
+        const allServices = [
+         {
+            title: "Staircase Safety Nets",
+            link: "stair-case-safety-nets-bangalore.html",
+            desc: "Our staircase safety nets offer reliable protection for open staircases in homes, apartments, and buildings. Designed with durable, high-quality materials, they prevent accidental slips and falls of children and pets while maintaining clear visibility and safety.",
+            img: "images/services/safetynet/indoor-staircase-fitted-with-transparent-net.jpeg",
+          },
+          {
+            title: "Balcony Safety Nets",
+            desc: "Our balcony safety nets are crafted from high-density polyethylene for maximum durability and UV resistance. They provide a secure barrier without obstructing your view, ensuring the safety of children and pets from falls.",
+            img: "images/services/safetynet/balcony-safetynets-service.jpeg",
+            link: "balcony-safety-nets-bangalore.html",
+
+          },
+          {
+            title: "Invisible Grills Balcony",
+            desc: "Our invisible grills provide a modern and secure balcony safety solution. Made with high-strength materials, they protect children and pets from falls while keeping your view clear, stylish, and unobstructed.",
+            img: "images/services/safetynet/invisible-grill-service.jpeg",
+            link: "invisible-grills.html",
+
+          },
+          {
+            title: "Pigeon Safety Nets",
+            link: "pigeon-safety-nets-bangalore.html",
+            desc: "Our pigeon safety nets keep your balconies, windows, and open spaces free from birds. Made from durable, weather-resistant materials, they prevent droppings and nesting while ensuring ventilation, hygiene, and a clean living environment.",
+            img: "images/services/pigeon-net-bangalore.jpg",
+          },
+          {
+            title: "Children Safety Nets",
+            link: "children-safety-nets-bangalore.html",
+            desc: "Our children safety nets provide strong protection for balconies, windows, and staircases. Designed with high-quality, durable materials, they create a safe play environment, preventing accidental falls while maintaining clear views and ventilation.",
+            img: "images/services/safetynet/children-balcony-safetynet-service.jpeg",
+          },
+          {
+            title: "Industrial Safety Nets",
+            link: "industrial-safety-nets-bangalore.html",
+            desc: "Our industrial safety nets are built with heavy-duty, high-strength materials to protect workers at construction and industrial sites. They ensure maximum safety by preventing accidental falls and debris hazards while meeting quality standards.",
+            img: "images/services/safetynet/construction-safety-net-service.jpeg",
+          },
+          {
+            title: "Building Safety Nets",
+            link: "building-safety-nets-bangalore.html",
+            desc: "Our building safety nets provide reliable protection for high-rise constructions and residential complexes. Made from durable, weather-resistant materials, they safeguard against falls and debris, ensuring safety for workers, residents, and surroundings.",
+            img: "images/services/building-safety-nets-bangalore.jpg",
+          },
+          {
+            title: "Duct Area Safety Nets",
+            link: "duct-area-safety-nets-bangalore.html",
+            desc: "Our duct area safety nets are specially designed to cover open duct spaces in apartments and buildings. They prevent accidental falls, block unwanted objects, and enhance safety for children, pets, and residents without disturbing ventilation or light.",
+            img: "images/services/safetynet/duct-area-covered-net.jpeg",
+          },
+          {
+            title: "Terrace Top Nets",
+            link: "terrace-top-safety-nets-bangalore.html",
+            desc: "Our terrace top nets provide secure protection for open terraces, preventing unauthorized access, falls, and bird entry. Made from durable, UV-resistant materials, they ensure safety for children, pets, and residents while maintaining ventilation and light.",
+            img: "images/services/safetynet/a-terrace-top-safety-net.jpeg",
+          },
+          {
+            title: "Monkey Safety Nets",
+            link: "monkey-safety-nets-bangalore.html",
+            desc: "Our monkey safety nets safeguard your balconies, terraces, and windows from monkey intrusions. Strong and weatherproof, they prevent damage and disturbance while ensuring ventilation and clear views, keeping your family and home safe from unwanted entry.",
+            img: "images/services/safetynet/monkey-safety-nets-service.jpeg",
+          },
+          {
+            title: "Construction Safety Nets",
+            link: "construction-safety-nets-bangalore.html",
+            desc: "Our construction safety nets are designed with heavy-duty, high-tensile materials to protect workers from falls and prevent debris hazards. Widely used at building sites, they ensure maximum safety, durability, and compliance with industry standards.",
+            img: "images/services/safetynet/construction-safetynet-service.jpeg",
+          },
+          {
+            title: "Swimming Pool Safety Nets",
+            link: "swimming-pool-safety-nets-bangalore.html",
+            desc: "Our swimming pool safety nets provide a secure barrier to prevent accidental falls of children and pets into the water. Made from strong, UV-resistant materials, they ensure safety without obstructing pool use, keeping your space protected and worry-free.",
+            img: "images/services/safetynet/swimming-pool-safetynets-service.jpeg",
+          },
+        ];
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () =>
+          mobileMenu.classList.toggle("hidden")
+        );
+
+        // --- Dynamic Services Population ---
+        const servicesDetailsContainer =
+          document.getElementById("services-details");
+        const footerServicesList1 =
+          document.getElementById("footer-services-1");
+        const footerServicesList2 =
+          document.getElementById("footer-services-2");
+        const servicesSubmenu = document.getElementById("services-submenu");
+        const mobileSubmenuContainer = document.getElementById(
+          "mobile-submenu-container"
+        );
+
+        allServices.forEach((service, index) => {
+          // Determine layout order based on index (even/odd)
+          const isReversed = index % 2 !== 0;
+          const contentOrderClass = isReversed ? "lg:order-2" : "lg:order-1";
+          const imageOrderClass = isReversed ? "lg:order-1" : "lg:order-2";
+
+          // UPDATE: Wrapped each service in a glass-section for better padding and design
+          const serviceHTML = `
+                    <div class="glass-section rounded-lg p-8 lg:p-12">
+                        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                            <div class="lg:w-1/2 ${contentOrderClass}">
+                                <h2 class="text-3xl md:text-4xl font-bold text-white">${service.title}</h2>
+                                <div class="mt-4 w-24 h-1 bg-theme-accent rounded-full"></div>
+                                <p class="mt-6 text-lg text-gray-200">${service.desc}</p>
+                                <a href="contact.html" class="mt-8 inline-block bg-theme-accent text-theme-primary px-8 py-3 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition duration-300">Get a Quote</a>
+                            </div>
+                            <div class="lg:w-1/2 ${imageOrderClass}">
+                                <img src="${service.img}" alt="${service.title}" class="rounded-lg shadow-xl w-full">
+                            </div>
+                        </div>
+                    </div>
+                `;
+          servicesDetailsContainer.innerHTML += serviceHTML;
+        });
+
+        allServices.forEach((service, index) => {
+          const listItem = `<li><a href="${service.link}" class="hover:text-white transition duration-300">${service.title}</a></li>`;
+          if (index < 6) {
+            footerServicesList1.innerHTML += listItem;
+          } else {
+            footerServicesList2.innerHTML += listItem;
+          }
+
+          servicesSubmenu.innerHTML += `<a href="${service.link}" class="block px-4 py-2 text-sm hover:bg-gray-100">${service.title}</a>`;
+          mobileSubmenuContainer.innerHTML += `<a href="${service.link}" class="block py-2 text-sm text-theme-accent hover:text-white">${service.title}</a>`;
+        });
+
+        // Mobile submenu accordion logic
+        const mobileSubmenuToggle = document.getElementById(
+          "mobile-submenu-toggle"
+        );
+        const mobileSubmenuIcon = document.getElementById(
+          "mobile-submenu-icon"
+        );
+        mobileSubmenuToggle.addEventListener("click", () => {
+          mobileSubmenuContainer.classList.toggle("hidden");
+          mobileSubmenuIcon.classList.toggle("fa-plus");
+          mobileSubmenuIcon.classList.toggle("fa-minus");
+          mobileSubmenuIcon.classList.toggle("rotate-180");
+        });
+
+        // --- Set current year in footer ---
+        document.getElementById("current-year").textContent =
+          new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
