@@ -218,7 +218,7 @@ textarea.form-control {
 }
 
 .pb-70 {
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .pb-40 {
@@ -5841,3 +5841,94 @@ ul.header-left-content a:hover {
 .whitebg{
     background-color:#fff !important;
 }
+
+
+/* Unique Styles for Product Section */
+
+.product-wrapper {
+ 
+  text-align: center;
+}
+
+.product-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #040840;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+     
+  .product-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 30px 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+      padding-bottom: 10px;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+.product-card img {
+  width: 100%;
+  height: auto;       /* keeps image ratio, no cutting */
+  max-height: 150px;  /* optional: limit height so it doesn’t stretch too tall */
+  object-fit: cover; /* ensures full image is visible */
+  display: block;
+}
+
+.product-call-icon {
+  width: 40px;
+  height: 40px;
+  background: green;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  font-size: 20px;   /* icon size */
+  text-decoration: none;
+}
+
+
+    .product-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #040840;
+      margin-bottom: 10px;
+    }
+
+    /* Tablet */
+    @media (max-width: 992px) {
+      .product-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile (2 per row as requested) */
+    @media (max-width: 576px) {
+      .product-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px 10px;
+      }
+
+      .product-card img {
+        height: 90px; /* slightly smaller */
+      }
+    }
