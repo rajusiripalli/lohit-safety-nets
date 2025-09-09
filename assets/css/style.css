@@ -5848,14 +5848,19 @@ ul.header-left-content a:hover {
 .product-wrapper {
  
   text-align: center;
+  margin-top: 20px;
 }
 
 .product-section-title {
   font-size: 24px;
   font-weight: 700;
   color: #040840;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-transform: capitalize;
+   padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  
 }
 
      
